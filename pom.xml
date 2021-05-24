@@ -64,10 +64,6 @@
             <version>5.1.47</version>
         </dependency>
 
-
-
-
-
     </dependencies>
 
     <dependencyManagement>
@@ -109,6 +105,23 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>7.9.1</version>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3307/community?serverTimezone=GMT</url>
+                    <user>root</user>
+                    <password>root</password>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>5.1.47</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
